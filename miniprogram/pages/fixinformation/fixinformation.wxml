@@ -1,0 +1,34 @@
+<!--pages/fixinformation/fixinformation.wxml-->
+<view class="container">
+    <view class="avatarUrl">
+        <image src="{{avatarUrl}}"></image>
+    </view>
+    <form bindsubmit="formSubmit">
+        <i-panel>
+            <i-input name="nickname" value="{{ form.nickname }}" title="昵称"/>
+            <i-input name="gender" value="{{ form.gender }}" type="number" title="性别" />
+            <i-input name="grade" value="{{ form.grade }}" type="textarea" title="年级" />
+            <van-cell title="生日" value="{{birthday}}" is-link bind:click="showPopupAge"/>
+                <van-popup
+                show="{{ showage }}"
+                position="bottom"
+                custom-style="height: 20%;"
+                bind:close="onCloseAge"
+                custom-style="height:500rpx"
+                >
+                    <van-datetime-picker
+                    type="date"
+                    value="{{ currentDate }}"
+                    max-date="{{ maxDate }}"
+                    min-date=""
+                    bind:confirm="onconfirmt"
+                    bind:cancel="oncancel"
+                    formatter="{{ formatter }}"
+                    />
+                </van-popup>
+            <i-input name="hobby" value="{{ form.hobby }}" title="爱好"/>
+            <i-input name="canvases" value="{{ form.canvases }}" type="textarea" title="个性签名" placeholder="请输入详细地址(最多50字)" />
+        </i-panel>
+        <button type="primary" form-type="submit">修改</button>
+    </form>
+</view>

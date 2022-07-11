@@ -1,0 +1,128 @@
+/* pages/chat/chat.wxss */
+.chat{
+    background-color: #909090;
+}
+.back{
+    position: fixed;
+    height: 40px;
+    line-height: 40px;
+    left: 10px;
+    z-index: 9;
+}
+.header{
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid #dddd;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+ 
+.message-list{
+  position: fixed;
+  width:100%;
+}
+.input-panel {
+  display: flex;
+  background: #dddddd;
+  height: 50px;
+  position: fixed;
+  width:100%;
+  padding:0px 10px;
+  align-items: center;
+  box-sizing: border-box;
+}
+ 
+.input-panel input {
+  flex: 1;
+  width: 100%;
+  background: #ffffff;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  padding:0px 5px;
+  border-radius: 15px;
+}
+ 
+.send-btn {
+  display: inline-block;
+  padding: 0px 10px;
+  color: #fff;
+  background: green;
+  border-radius: 15px;
+  line-height:30px;
+  margin-left:5px;
+}
+.mymessage{
+    margin-top: 10px;
+    float: right;
+    right: 0;
+    width: 70%;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+}
+.myavatar{
+    float: right;
+    right: 0;
+}
+
+.myavatar image{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.mymessagecontent{
+  display: -webkit-box;  /*设置为弹性盒子*/
+  -webkit-box-orient: vertical;
+  word-break: break-all;  /*强制英文单词自动换行*/
+  background-color: rgb(112, 179, 112);
+  font-size: 35rpx; 
+  float: right;
+  right: 0;
+  margin-top: 30px;
+  margin-right: 10px;
+  border-radius: 15px 0px 15px 15px;
+  padding: 5px;
+}
+.hemessage{
+    margin-top: 10px;
+    float: left;
+    left: 0;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+}
+.heavatar{
+    float: left;
+    right: 0;
+}
+.heavatar image{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.hemessagecontent{
+    display: -webkit-box;  /*设置为弹性盒子*/
+    -webkit-box-orient: vertical;
+    word-break: break-all;  /*强制英文单词自动换行*/
+    background-color: rgb(112, 179, 112);
+    /* font-size: 20px;  */
+    font-size: 35rpx;
+    float: left;
+    left: 0;
+    margin-top: 30px;
+    margin-left: 10px;
+    border-radius: 0px 15px 15px 15px;
+    padding: 5px;
+  }
+  .time{
+      font-size: 20rpx;
+      /* background-color: red; */
+      width: 70rpx;
+      height: 30rpx;
+      position: relative;
+      /* top: 90rpx; */
+  }

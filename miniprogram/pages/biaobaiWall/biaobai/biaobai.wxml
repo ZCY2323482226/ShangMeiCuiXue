@@ -1,0 +1,66 @@
+<!-- pages/biaobai/biaobai.wxml -->
+<wxs src="../../../util/filter.wxs" module="filter"/>
+<view class="content">
+    <view class="navbar" >
+    <text class="back" bindtap="back">首页</text>
+    <text class="tab-bar">校园表白墙</text>
+    </view>
+     <!-- 表白帖 -->
+    <view class="item">
+        <view class="itemcontent" wx:for="{{lovewall_author_list}}">
+            <view class="top_item" bindtap="isprivate">
+            <!-- 头像 -->
+                <view class="avatar" bindtap="checkpushlisherinfo" data-pushlisherinfo="{{item.author}}">
+                    <image src="{{item.author.avatarUrl}}"></image>
+                </view>
+                <!-- 昵称 -->
+                <view class="nickname">
+                        {{item.author.nickname}}
+                </view> 
+            </view>
+            <!-- 表白内容 -->
+            <view class="minitem" bindtap="detail_route" data-lovewallItem="{{item}}">
+                    <view class="title">
+                    {{item.lovewall.title}}
+                    </view>
+                    <view class="item_content" >
+                        {{item.lovewall.content}}
+                    </view>
+                    <view class="myLoveImg">
+                    <image mode="widthFix" src="{{item.lovewall.myLoveImg}}"></image>
+                    </view>
+                    <view class="time">
+                        {{filter.formatTime(item.lovewall.time,'Y-M-D h:m')}}
+                    </view>
+            </view>
+            <view class="operate">
+                <!-- 评论功能 -->
+                <van-icon custom-class="operateicon" name="comment-o" size="50rpx" color="#686868" bindtap="comment" data-biaobaiitem="{{item}}" />
+                <!-- 点赞功能 -->
+                <van-icon wx:if="{{!item.lovewall.likeorNot}}" custom-class="operateicon" name="good-job-o" size="50rpx" color="#686868" bindtap="likebind" data-articleIndex="{{index}}" data-articleId="{{item.lovewall._id}}" />
+                <van-icon wx:if="{{item.lovewall.likeorNot}}" custom-class="operateicon" name="good-job" size="50rpx" color="red" bindtap="likebind" data-articleIndex="{{index}}" data-articleId="{{item.lovewall._id}}" />
+                <text class="likecount">{{item.likelist.length}}</text>
+            </view>
+            <view class="commentlist">
+                <view class="comment" wx:for="{{item.commentList}}">
+                    <text class="comment_nickname">{{item.comment_authorName}}</text>
+                    :
+                    <text class="comment_content">{{item.content}}</text>
+                </view>
+            </view>
+            <view class="countComment" wx:if="{{item.commentList.length>3}}" bindtap="detail_route" data-lovewallItem="{{item}}">
+                    查看所有{{item.commentList.length}}条评论
+            </view>
+        
+        </view>
+        
+    </view>
+    
+      <!-- 发布表白墙的按钮 -->
+      <movable-area class="post-container">
+        <movable-view direction="all" class='post' bindtap="publishMyLove">
+            <image src='cloud://nsedu-0geuprrl4b1a75d6.6e73-nsedu-0geuprrl4b1a75d6-1311608272/image/post.png' data-page='/pages/home/post/post' bindtap='post'></image>
+        </movable-view>
+      </movable-area>
+      
+</view>

@@ -1,0 +1,27 @@
+<!--pages/pushlish/pushlish.wxml-->
+<view class="containe">
+    <van-toast id="van-toast" />
+    <form bindsubmit="submit">
+        <view class="title">
+            <input name="title" type="text" placeholder="请输入标题..." maxlength="{{30}}" value="{{title}}" />
+        </view>
+        <view class="tag">
+            <van-cell title="{{tag}}" is-link bind:click="showPopup" />
+            <van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+                <van-picker columns="{{ tags }}" show-toolbar title="文章标签" bind:cancel="picker_onChange" bind:confirm="picker_onConfirm" />
+            </van-popup>
+        </view>
+        <view class="content">
+            <hg-editor name="content" value="{{content}}" placeholder="亲，在这里写文章内容哦" bind:input="onInputtingDesc"></hg-editor>
+            <!-- <textarea name="content" placeholder="输入内容..." value="{{content}}" maxlength="{{10000}}">
+            </textarea> -->
+        </view>
+        <view class="pushlish_button">
+            <button type="primary" form-type="submit">发布</button>
+        </view>
+    </form>
+    <!-- <hg-editor
+    placeholder="亲，在这里写文章内容哦"
+    bind:input="onInputtingDe   sc"
+    ></hg-editor> -->
+</view>

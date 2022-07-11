@@ -1,0 +1,25 @@
+/* pages/pushlish/pushlish.wxss */
+.containe{
+    margin-top: 30rpx;
+}
+.tag{
+    margin-top: 10rpx;
+}
+.title{
+    background-color: #fff;
+    height: 60rpx;
+    padding-left: 20rpx;
+    padding-top: 20rpx;
+    margin-bottom: 2px;
+}
+.content{
+    background-color: #fff;
+    margin-top: 10rpx;
+    /* padding-left: 20rpx; */
+    /* padding-top: 20rpx; */
+    margin-bottom: 2px;
+    border: 1px solid #dddddd;
+}
+.pushlish_button{
+    margin: 30rpx 100rpx;
+}

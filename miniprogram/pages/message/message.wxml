@@ -1,0 +1,36 @@
+<!--pages/message/message.wxml-->
+<wxs src="../../util/filter.wxs" module="filter" />
+<view>
+    <view class="myNotice" bindtap="notice_route">
+        <image src="../../assets/icon/Mymessage.png"></image>
+        <text>通知</text>
+        <van-icon name="arrow" size="40rpx" color="#969799"/>
+    </view>
+    <view class="myMessage">
+        <view class="instructions">
+            <text>私信</text>
+            <view class="clear">
+                <image src="../../assets/icon/clear.png"></image>
+                <text>清除未读</text>
+            </view>
+        </view>
+        <view class="messageContent">
+            <view class="message" wx:for="{{all_message_data}}"  bindtap="chat" data-message_data="{{index}}" data-message_item="{{item}}">
+                <!-- 头像 -->
+                <view class="left">
+                    <image src="{{item.userinfo.avatarUrl}}"></image>
+                    <view class="noReadMessage" wx:if="{{item.isnotread.length !== 0}}">{{item.isnotread.length}}</view>
+                </view>
+                <!-- 昵称 -->
+                <view class="center">{{item.userinfo.nickname}}</view>
+                <!-- 最新消息 -->
+                <view class="newmessage">{{item.allmessage[item.allmessage.length-1].content}}</view>
+                <!-- 最新消息的时间 -->
+                <view class="right">{{filter.formatTime(item.allmessage[item.allmessage.length-1].time,'Y-M-D h:m')}}</view>
+            </view>
+        </view>
+    </view>
+    <van-divider contentPosition="center" fontSize="30rpx">已经到底啦！</van-divider>
+</view>
+<!-- <button type="primary" bindtap="dianji">增加聊天信息</button> -->
+<!-- <button type="primary" bindtap="read">已读</button> -->

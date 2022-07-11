@@ -1,0 +1,67 @@
+/* pages/notice/notice.wxss */
+.item{
+    display: flex;
+    height: 190rpx;
+    align-items: center;
+    background-color: #fff;
+}
+.avatar image{
+    width: 100rpx;
+    height: 100rpx;
+    margin-left: 40rpx;
+    /* margin-top: 20rpx; */
+}
+.nickname{
+    /* margin-top: 20rpx; */
+    margin-left: 20rpx;
+    font-weight: bold;
+    color: #5b6994;
+}
+.likeicon{
+    margin-left: 20rpx;
+}
+.time{
+    margin-left: 20rpx;
+}
+.time text{
+    font-size: 20rpx;
+    color: #8f8f8f;
+}
+.content{
+    position: absolute;
+    right: 20rpx;
+    width: 180rpx;
+    height: 156rpx;
+    /* 文字部分 */
+    color: #8f8f8f;
+    font-size: 30rpx;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    word-break:break-all
+}
+.comment_who{
+    margin-left: 20rpx;
+    width: 300rpx;
+    height: 40rpx;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    /* background-color:red; */
+}
+.comment_who text{
+    font-weight: bold;
+    color: #5b6994;
+}
+.Title{
+    color: #fff;
+    background-color: #7848b6;
+    text-align: center;
+    width: 200rpx;
+    height: 65rpx;
+    line-height: 65rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+    margin: 20rpx 10rpx;
+    border: 1px solid #5b6994;
+    border-radius: 20px;
+}

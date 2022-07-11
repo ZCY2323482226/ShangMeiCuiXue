@@ -1,0 +1,149 @@
+.tab-bar{
+    position: absolute;
+    top: 15rpx;
+    left: 300rpx;
+    z-index: 9;
+    text-align: center;
+    color: rgba(60, 163, 248, 0.986);
+    line-height: 250rpx;
+    font-weight: 200;
+    font-family: "Legao";
+    font-size: 50rpx;
+}
+.navbar{
+    position: fixed;
+    background-color: #fff;
+    height: 180rpx;
+    width: 100%;
+    line-height: 250rpx;
+    background-color: #7848b6;
+    z-index: 9999;
+    top: 0;
+    font-weight: 200;
+    border-bottom: 1px solid #dddd;
+}
+.back{
+    position: absolute;
+    top: 15rpx;
+    font-size:12pt;
+    margin-left: 20rpx;
+}
+.search{
+    position: fixed;
+    width: 100%;
+    top: 180rpx;
+}
+/**post css**/
+.post-container{
+    position:fixed;
+    right:0rpx;
+    bottom:0rpx;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+  }
+  movable-view {pointer-events: auto;}
+  movable-area {pointer-events: none;}
+  .post{
+      position:absolute;
+      width: 120rpx;
+      height: 120rpx;
+      background-color: #fff;
+      border-radius: 50%;
+      top: 85vh;
+      left: 83vw;
+      z-index: 100;
+  }
+  .post image{
+    width: 120rpx;
+    height: 120rpx;
+    background-color: #fff;
+  }
+  /* 表白帖样式 */
+  
+.avatar image{
+    margin-left: 20rpx;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+.allitem{
+    margin-top: 270rpx;
+}
+.item{
+    background-color: #fff;
+    padding-top: 30rpx;
+    margin-bottom: 2px;
+}
+.item_content{
+    position: relative;
+    display: flex;
+    height: 250rpx;
+}
+.item .minitem{
+    margin-left: 20rpx;
+}
+.minitem{
+    position: relative;
+}
+.nickname{
+    font-size: 30rpx;
+    color: #7848b6;
+    font-weight: bold;
+}
+.content {
+    height: 120rpx;
+    width: 430rpx;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    font-size: 30rpx;
+    margin-top: 20rpx;
+    color: #686868;
+}
+.time{
+    position: absolute;
+    width: 110px;
+    bottom: 8px;
+    font-size: 25rpx;
+    color: #949494;
+}
+.likecount{
+    color: #696969;
+    font-size: 30rpx;
+}
+.operate{
+    position: absolute;
+    bottom: 0;
+    right: 20rpx;
+}
+.operateicon{
+    margin-left: 20rpx;
+}
+/* 评论的样式 */
+.commentlist{
+    max-height:120rpx;
+    overflow: hidden;
+}
+.countComment{
+    color: #4a7ab1;
+    font-size: 29rpx;
+    font-weight: bold;
+    margin-left: 135rpx;
+    /* text-align: center; */
+}
+.comment{
+    height: 40rpx;
+    overflow: hidden;
+    margin-left: 135rpx;
+    font-size: 28rpx;
+}
+.comment_nickname{
+    color: #336586;
+}
+/* 下拉加载 */
+.loading{
+    margin: auto;
+    width: 91px;
+    /* background-color: red; */
+}

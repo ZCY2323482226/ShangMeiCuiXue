@@ -1,0 +1,47 @@
+/* pages/comment/comment.wxss */
+.comment{
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+    color: #7848b6;
+}
+.operateText{
+    font-size: 30rpx;
+    width: 100rpx;
+    height: 80rpx;
+    /* 使垂直居中 */
+    line-height: 80rpx;
+    text-align: center;
+    /* background-color:red; */
+}
+.input{
+    background-color: #fff;
+}
+.commentpeople{
+    height: 200rpx;
+    background-color:#fff;
+    display:flex;
+    padding-left: 14rpx;
+    align-items: center;
+}
+.avatar image{
+    width: 150rpx;
+    height:150rpx;
+}
+.NC{
+    margin-left: 20rpx;
+}
+.nickname{
+    color: #4085ad;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+.content{
+    width: 300rpx;
+    font-size: 28rpx;
+    color: #5f5f5f;
+    height: 120rpx;
+    overflow: hidden;
+    /* word-break:break-all; */
+    word-wrap:break-word;
+}

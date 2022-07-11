@@ -1,0 +1,50 @@
+
+<form>
+<!-- 标题 -->
+    <view class="cu-form-group margin-top">
+		<view class="title">标题</view>
+		<input  placeholder="标题" bindinput="getTitle"></input>
+	</view>
+<!-- 文本框 -->
+  <view class="cu-form-group margin-top0" Style='height:200rpx;'>
+    <textarea style='height:200rpx;' maxlength="1024" disabled="{{content!=null}}" bindinput="getTextContent" placeholder="和Ta表白"></textarea>
+  </view>
+ <!-- 图片选择 -->
+  <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			Ta的照片
+		</view>
+		<view class="action">
+			{{myLoveImg.length}}/1
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{myLoveImg}}" wx:key="index" bindtap="ViewImage" data-url="{{myLoveImg[index]}}">
+				<image src='{{myLoveImg[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{myLoveImg.length<1}}">
+				<text class="cuIcon-cameraadd">
+                    
+                </text>
+                <van-icon name="photograph" class="camera"/>
+			</view>
+		</view>
+	</view>
+  <!-- 其他 -->
+
+
+  	<view class="cu-form-group margin-top">
+		<view class="title">匿名</view>
+		<switch bindchange="setPrivate"></switch>
+	</view>
+
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-green lg" bindtap='post' disabled='{{!canPost}}'>发布到表白墙</button>
+</view>
+
+
+</form>

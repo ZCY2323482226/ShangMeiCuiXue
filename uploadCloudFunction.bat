@@ -1,0 +1,1 @@
+"D:\软件\小程序开发工具\微信web开发者工具\cli.bat" cloud functions deploy --e nsedu-0geuprrl4b1a75d6 --n quickstartFunctions --r --project "D:\wx_project\Applet_competition" --report_first --report

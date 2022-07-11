@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "hg-editor":"../../../components/hg-editor/hg-editor",
+        "van-popup": "@vant/weapp/popup/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-picker": "@vant/weapp/picker/index",
+        "van-toast": "@vant/weapp/toast/index"
+    }
+}

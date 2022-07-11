@@ -1,0 +1,59 @@
+<!--pages/notice/notice.wxml-->
+<wxs src="../../util/filter.wxs" module="filter" />
+<view wx:if="{{loading}}">
+    <van-tabs animated active="{{ active }}" bind:change="onChange">
+        <van-tab title="点赞通知">
+            <!-- 点赞通知 -->
+            <view class="Title">点赞通知</view>
+            <view class="item" wx:for="{{mylikelist}}" bindtap="like_route" data-like="{{item}}">
+                <view class="avatar">
+                    <image src="{{item.userinfo.avatarUrl}}"></image>
+                </view>
+                <view>
+                    <view class="nickname">
+                        <text>{{item.userinfo.nickname}}</text>
+                    </view>
+                    <view class="likeicon">
+                        <van-icon name="like-o" color="#5b6994" size="30rpx" />
+                    </view>
+                    <view class="time">
+                        <text>{{filter.formatTime(item.mylikeinfo.time,'Y-M-D h:m')}}</text>
+                    </view>
+                </view>
+                <view class="content">
+                    {{item.articleinfo.title}}
+                    {{item.articleinfo.content_text}}
+                </view>
+            </view>
+        </van-tab>
+        <van-tab title="评论通知">
+            <!-- 评论通知 -->
+            <view class="Title">评论通知</view>
+            <view>
+                <view class="item" wx:for="{{mycommentlist}}" bindtap="comment_route" data-comment="{{item}}">
+                    <view class="avatar">
+                        <image src="{{item.userinfo.avatarUrl}}"></image>
+                    </view>
+                    <view>
+                        <view class="nickname">
+                            <text>{{item.userinfo.nickname}}</text>
+                        </view>
+                        <view class="comment_who">
+                            回复
+                            <text>你</text>
+                            {{item.mycommentinfo.content}}
+                        </view>
+                        <view class="time">
+                            <text>{{filter.formatTime(item.mycommentinfo.time,'Y-M-D h:m')}}</text>
+                        </view>
+                    </view>
+                    <view class="content">
+                        {{item.articleinfo.title}}
+                        {{item.articleinfo.content_text}}
+                    </view>
+                </view>
+            </view>
+        </van-tab>
+    </van-tabs>
+    <van-divider contentPosition="center">已经到底啦！</van-divider>
+</view>

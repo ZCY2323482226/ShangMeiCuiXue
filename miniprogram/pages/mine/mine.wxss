@@ -1,0 +1,85 @@
+/* pages/mine/mine.wxss */
+.nickname{
+    color: #fff;
+}
+.up{
+    background-color: #7848b6;
+    height: 401rpx;
+    display: flex;
+}
+.avater{
+    border-radius: 50%;
+    margin-left: 90rpx;
+    margin-top: 50rpx;
+    border:2px solid #fff;
+    width: 190rpx;
+    height: 190rpx;
+}
+.nickname{
+    margin-left: 60rpx;
+    margin-top: 130rpx;
+}
+.operation{
+    width: 580rpx;
+    margin: auto;
+    border-radius: 30rpx;
+    background-color: #fff;
+    box-shadow:0 0 10px #c2c2c2;
+    z-index: 10;
+}
+.icon{
+    width: 50rpx;
+    /* height: auto; */
+}
+.operationList{
+    display: flex;
+    padding-top: 36rpx;
+    margin-left: 60rpx;
+    margin-right: 60rpx;
+    height:120rpx;
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+.operationList image{
+    margin-top: 10rpx;
+}
+.feedback{
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    color: #606060;
+}
+.text{
+    margin-top: 19rpx;
+    margin-left: 40rpx;
+    color: rgb(116, 114, 114);
+}
+.likePost{
+    width: 580rpx;
+    height: 170rpx;
+    margin: auto;
+    border-radius: 20rpx;
+    background-color: #fff;
+    display: flex;
+    z-index: 10;
+    /* margin-bottom: 30px; */
+    position: relative;
+    box-shadow:0 0 10px #c2c2c2;
+    bottom:90rpx;
+    align-items: center;
+}
+.likePost .item{
+    display: flex;
+    width: 290rpx;
+    /* padding: 0 10px; */
+}
+.line{
+    border: 1px solid #dfdddd;
+    height: 110rpx;
+}
+.icon2{
+    margin-left: 20rpx;
+    width: 80rpx;
+}
+.text2{
+    margin: 20rpx 20rpx;
+    color: rgb(116, 114, 114);
+}

@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "i-button": "../../dist/button/index",
+        "i-avatar": "../../dist/avatar/index",
+        "van-icon": "@vant/weapp/icon/index"
+    }
+}

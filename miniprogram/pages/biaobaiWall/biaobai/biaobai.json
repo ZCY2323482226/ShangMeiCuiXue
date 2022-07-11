@@ -1,0 +1,10 @@
+{
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+        "van-icon": "@vant/weapp/icon/index"
+    }
+
+}

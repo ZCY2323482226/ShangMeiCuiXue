@@ -1,0 +1,33 @@
+<!--pages/myLike/myLike.wxml-->
+<wxs src="../../util/filter.wxs" module="filter" />
+<view class="tab-bar">
+    <text>我的点赞</text>
+</view>
+<view wx:if="{{loading}}" style="margin-top: 70rpx;">
+    <view class="myLike" wx:for="{{articlelist}}">
+        <view>
+            <view class="userinfo" style="display: flex;">
+                <image class="avatar" src="{{item.author.avatarUrl}}" bindtap="getuserinfo" data-userinfo="{{item.author}}"></image>
+                <text class="nickname">{{item.author.nickname}}</text>
+            </view>
+            <view class="content" bindtap="getarticledetail" data-articledetail="{{item}}">
+                <view style="width: 400rpx;overflow: hidden;">
+                    <van-tag wx:if="{{item.article.tag === '杂谈趣事'}}" type="primary">{{item.article.tag}}</van-tag>
+                    <van-tag wx:if="{{item.article.tag === '帮帮'}}" type="success">{{item.article.tag}}</van-tag>
+                    <van-tag wx:if="{{item.article.tag === '失物招领'}}" color="success">{{item.article.tag}}</van-tag>
+                    <van-tag wx:if="{{item.article.tag === '寻人'}}" type="pink">{{item.article.tag}}</van-tag>
+                    <view style="font-weight: bold;color: #313030;font-size: 32rpx;">{{item.article.title}}</view>
+                    {{item.article.content_text}}
+                </view>
+            </view>
+            <view class="time">
+                {{filter.formatTime(item.article.time,'Y-M-D h:m')}}
+            </view>
+            <view class="likeIcon" bindtap="bindlike" data-like="{{index}}">
+                <van-icon wx:if="{{!item.likesign}}" name="like-o" size="45rpx" />
+                <van-icon wx:if="{{item.likesign}}" name="like" size="45rpx" color="red" />
+            </view>
+        </view>
+    </view>
+    <van-divider contentPosition="center">已经到底啦！</van-divider>
+</view>

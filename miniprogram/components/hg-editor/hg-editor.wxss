@@ -1,0 +1,39 @@
+/* components/hg-editor/hg-editor.wxss */
+@import "iconfont.wxss";
+
+.editor-box {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  border:2px solid #f6f6f6;
+}
+
+.editor-box-header,
+.editor-box-content {
+  width: 100%;
+}
+
+.editor-box-header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content:flex-start;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f6f6f6;
+  background-color: #f6f6f6;
+}
+
+.editor-box-header>.operate-box {
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  overflow: hidden;
+  color:gray;
+}
+
+.editor-box-content{
+  padding:20rpx;
+  box-sizing: border-box;
+}

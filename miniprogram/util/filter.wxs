@@ -1,0 +1,26 @@
+// 抄官方的util.js，改造了一下
+var formatNumber = function(n){
+    n = n.toString()
+    return n[1] ? n : '0' + n
+  }
+  var formatTime = function (number, format) {
+    var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+    var returnArr = [];
+  
+    var date = getDate(number);
+    returnArr.push(date.getFullYear());
+    returnArr.push(formatNumber(date.getMonth() + 1));
+    returnArr.push(formatNumber(date.getDate()));
+  
+    returnArr.push(formatNumber(date.getHours()));
+    returnArr.push(formatNumber(date.getMinutes()));
+    returnArr.push(formatNumber(date.getSeconds()));
+  
+    returnArr.forEach(function(item,index) {
+      format = format.replace(formateArr[index], item);
+    })
+    return format;
+  }
+  module.exports = {
+    formatTime: formatTime
+  };

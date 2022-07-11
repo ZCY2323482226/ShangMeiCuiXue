@@ -1,0 +1,32 @@
+<!--pages/saylovecomment/saylovecomment.wxml-->
+<view>
+    <view class="operate" style="display: flex; position:relative">
+        <view class="operateText" bindtap="cancel">取消</view>
+        <view class="operateText comment" bindtap="comment">评论</view>
+    </view>
+    <view class="input">
+        <textarea name=""
+                  id="" 
+                  cols="30" 
+                  rows="10" 
+                  value="{{commentContent}}"
+                  bindinput="bindinput"
+                  placeholder="写评论"
+                  maxlength="200"
+                  >
+        </textarea>
+    </view>
+    <view class="commentpeople">
+        <view class="avatar">
+            <image src="{{avatar}}"></image>
+        </view>
+        <view class="NC">
+            <view class="nickname">
+                @ {{nickname}}
+            </view>
+            <view class="content">
+                {{content}}
+            </view>
+        </view>
+    </view>
+</view>

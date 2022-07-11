@@ -1,0 +1,33 @@
+<!--pages/homepage/homepage.wxml-->
+<wxs src="../../util/filter.wxs" module="filter" />
+<view class="contanter">
+    <view class="bg_top">
+        <image class="avatar" src="{{avatarUrl}}"></image>
+        <text class="nickname">{{nickname}}</text>
+    </view>
+    <view class="information">
+        <view class="fix_information" wx:if="{{!ifnotcheck}}">
+            <button size="mini" bindtap="fix_route">修改信息</button>
+        </view>
+        <view class="item_information">
+            <view>
+                <text>年级：{{grade}}</text>
+            </view>
+            <view>
+                <text>性别：{{gender}}</text>
+            </view>
+            <view>
+                <text>生日：{{birthday}}</text>
+            </view>
+            <view>爱好：{{hobby}}</view>
+            <view>个性签名：
+                <view>
+                    {{canvases}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="pushlish_message" wx:if="{{ifnotcheck}}">
+        <button bindtap="pushlish_message">发消息</button>
+    </view>
+</view>

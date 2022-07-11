@@ -1,0 +1,49 @@
+<!--pages/shouye/shouye.wxml-->
+<view class="container">
+    <view class="swiper_container">
+        <swiper class="swiper"  autoplay="true" circular="true" interval="3000" duration="1000"
+        indicator-dots 	indicator-color="#fff" 	indicator-active-color="#7848b6">
+            <block wx:for="{{images}}" wx:key="id">
+                <swiper-item>
+                    <image class="iamge_banner" src="cloud://nsedu-0geuprrl4b1a75d6.6e73-nsedu-0geuprrl4b1a75d6-1311608272/image/{{item}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="nav-bar">
+        <view class="navbar-item" bindtap="biaobai">
+            <!-- <image src="cloud://nsedu-0geuprrl4b1a75d6.6e73-nsedu-0geuprrl4b1a75d6-1311608272/image/collection.png"></image> -->
+            <view>
+                <text class="title">校园表白墙</text>
+                <view class="detail">
+                    表白贴 / 发布表白贴
+                </view>
+            </view>
+        </view>
+        <view class="navbar-item" bindtap="SchoolLearn">
+            <!-- <image src="cloud://nsedu-0geuprrl4b1a75d6.6e73-nsedu-0geuprrl4b1a75d6-1311608272/image/shuben.png"></image> -->
+            <view>
+                <text class="title">校园学习</text>
+                <view class="detail">
+                    论坛贴 / 发帖
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="logo">
+        <view>
+            <image src="https://6e73-nsedu-0geuprrl4b1a75d6-1311608272.tcb.qcloud.la/image/logo.png?sign=39c877bd8c65d0601c823d8e7f7c74fb&t=1653582927"></image>
+        </view>
+        <view class="name">
+            校园论坛
+        </view>
+    </view>
+    <!-- <view class='notice-wrap'  style='display:{{hideNotice}};'>
+        <view class='notice ovh font28 relative'>
+            <view class="marquee_text" style="left:{{marqueeDistance}}px;">
+            {{notice}}
+            </view>  
+        </view>
+        <image bindtap='switchNotice' src='cloud://nsedu-0geuprrl4b1a75d6.6e73-nsedu-0geuprrl4b1a75d6-1311608272/image/guanbi.png' class='close-icon icon40 right icon'></image>
+    </view> -->
+</view>

@@ -1,0 +1,71 @@
+<!--pages/articalDetail2/articalDetail2.wxml-->
+<wxs src="../../util/filter.wxs" module="filter" />
+<import src="../../util/wxParse/wxParse"/>
+<view>
+    <view class="nickname_avatar">
+        <view class="avatar">
+            <image src="{{data.avatar}}"></image>
+        </view>
+        <view class="nickname">
+            {{data.nickname}}
+        </view>
+    </view>
+
+    <!-- 界面展示 -->
+    <view class="exhibition">
+        <view class="title">
+            {{data.title}}
+        </view>
+        <view class="content">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+            <!-- {{data.content}} -->
+        </view>
+        <!-- 放时间 阅读量等 -->
+        <view class="time_views">
+            <view class="time">{{data.time}}</view>
+            <view class="views">阅读{{data.views}}</view>
+            <view class="operate">
+                <!-- 评论功能 -->
+                <van-icon custom-class="operateicon" name="comment-o" size="50rpx" color="#686868" bindtap="comment" data-articleitem="{{Data}}" />
+                <!-- 点赞功能 -->
+                <van-icon wx:if="{{!Data.article.likeorNot}}" custom-class="operateicon" name="good-job-o" size="50rpx" color="#686868" bindtap="likebind"  />
+                <van-icon wx:if="{{Data.article.likeorNot}}" custom-class="operateicon" name="good-job" size="50rpx" color="red" bindtap="likebind"  />
+                <text class="likecount">{{Data.likelist.length}}</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 展示点赞和评论 -->
+    <view class="comment_like">
+        <van-tabs active="{{ active }}" bind:change="onChange" >
+            <van-tab title="评论{{commentList.length}}">
+                <view class="comment" wx:for="{{commentList}}">
+                    <view class="avatar">
+                        <image src="{{item.commentAuthor_avatarUrl}}"></image>
+                    </view>
+                    <view>
+                        <view class="nickname">{{item.comment_authorName}}</view>
+                        <view class="commentConent">{{item.content}}</view>
+                        <view class="commentTime"> {{filter.formatTime(item.time,'Y-M-D h:m')}}</view>
+                    </view>
+                    <!-- <view>
+                        <van-icon custom-class="operateicon" style="position: absolute;right: 50rpx;" name="comment-o" size="50rpx" color="#686868" bindtap="comment" data-articleitem="{{item}}" />
+                    </view> -->
+                </view>
+            </van-tab>
+            <van-tab title="点赞{{likeList.length}}">
+                <view class="likes" wx:for="{{likeList}}">
+                    <view class="avatar">
+                            <image src="{{item.likeAuthor_avatarUrl}}"></image>
+                    </view>
+                    <view class="nickname">
+                        {{item.likeAuthor_name}}
+                    </view>
+                    <view class="likeTime">
+                        {{filter.formatTime(item.time,'Y-M-D h:m')}}
+                    </view>
+                </view>
+            </van-tab>
+        </van-tabs>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "i-input": "../../dist/input/index",
+        "i-panel": "../../dist/panel/index",
+        "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+        "van-popup": "@vant/weapp/popup/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index"
+    }
+}

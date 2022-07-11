@@ -1,0 +1,56 @@
+/* pages/homepage/homepage.wxss */
+.contanter{
+    font-size: 30rpx;
+    color: #6d6c6c;
+}
+.bg_top{
+    height: 400rpx;
+    background-color:#7848b6;
+}
+.avatar{
+    border-radius: 50%;
+    margin-left: 90rpx;
+    margin-top: 50rpx;
+    border:2px solid #fff;
+    width: 190rpx;
+    height: 190rpx;
+    z-index: 99;
+    position: relative;
+    top:240rpx;
+}
+.nickname{
+    position: relative;
+    color: #ccda0d;
+    font-weight: bold;
+    top: 120rpx;
+    margin-left: 50rpx;
+}
+.information{
+    background: #ffffff;
+    height: 500rpx;
+    border-radius: 50rpx;
+    box-shadow: 0 0 10px #bebebe;
+}
+.information .fix_information{
+    position: relative;
+    top: 30rpx;
+    left: 540rpx;
+}
+button{
+    color: #fff;
+    background-color: #7848b6;
+    border-radius: 400rpx;
+}
+.item_information{
+    padding:80rpx 0 0 50rpx;
+}
+.item_information view{
+    margin-bottom: 20rpx;
+}
+/* 发消息 */
+.pushlish_message{
+    text-align: center;
+    width: 400rpx;
+    margin: auto;
+    margin-top: 20rpx;
+}

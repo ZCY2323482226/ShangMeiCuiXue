@@ -1,0 +1,80 @@
+/* pages/myPosts/myPosts.wxss */
+.tab-bar{
+    position:fixed;
+    top:0; 
+    width: 100%;
+    z-index: 9;
+    text-align: center;
+    background-color: #fff;
+    color: rgba(55, 149, 165, 0.801);
+    height: 70rpx;
+    line-height: 70rpx;
+    font-weight: 200;
+    font-family: "LeGao";
+    font-size: 50rpx;
+    border-bottom: 1px solid #dddd;
+}
+.myPost{
+    background-color: #fff;
+    height: 320rpx;
+    padding-bottom: 30rpx;
+    margin-bottom: 2px;
+}
+.avatar{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-top: 40rpx;
+    margin-left: 40rpx;
+}
+.nickname{
+    margin-top: 60rpx;
+    margin-left: 30rpx;
+    color: #757575;
+}
+.userinfo .more1{
+    font-size: 80rpx;
+    color: #757575;
+    position: absolute;
+    right: 40rpx;
+}
+.more2{
+    font-size: 80rpx;
+    color: #757575;
+    position: relative;
+    left: 430rpx;
+}
+.content-title{
+    font-weight: bold;
+}
+.time-views{
+    height: 20rpx;
+}
+.content{
+    height: 165rpx;
+    /* background-color: red; */
+    margin-left: 130rpx;
+    margin-right: 30rpx;
+    overflow: hidden;
+    color: #757575;
+}
+.time{
+    margin-top: 20rpx;
+    margin-left: 130rpx;
+    font-size: 25rpx;
+    color: #757575;
+}
+.buttonCenter{
+    display: flex;
+    justify-content:center;
+    margin-top: 10rpx;
+}
+.time-views{
+    display: flex;
+}
+.views{
+    font-size: 25rpx;
+    color: rgb(155, 153, 153);
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+}

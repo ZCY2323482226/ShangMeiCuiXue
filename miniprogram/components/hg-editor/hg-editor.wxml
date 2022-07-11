@@ -1,0 +1,42 @@
+<!--components/hg-editor/hg-editor.wxml-->
+<view class="editor-box">
+  <view class="editor-box-header" wx:if="{{showTabBar}}">
+    <view class="operate-box" data-uploadImageURL="{{uploadImageURL}}" bind:tap="_addImage">
+      <text class="iconfont icon-image"></text>
+    </view>
+    <view class="operate-box" bind:tap="_addItalic">
+      <text class="iconfont icon-italic"></text>
+    </view>
+    <view class="operate-box" bind:tap="_addBold">
+      <text class="iconfont icon-bold"></text>
+    </view>
+    <view class="operate-box" data-header="h1" bind:tap="_addHeader">
+      <text class="iconfont icon-h1"></text>
+    </view>
+    <view class="operate-box" data-header="h2" bind:tap="_addHeader">
+      <text class="iconfont icon-h2"></text>
+    </view>
+    <view class="operate-box" data-header="h3" bind:tap="_addHeader">
+      <text class="iconfont icon-h3"></text>
+    </view>
+    <view class="operate-box" data-align="left" bind:tap="_addAlign">
+      <text class="iconfont icon-alignLeft"></text>
+    </view>
+    <view class="operate-box" data-align="right" bind:tap="_addAlign">
+      <text class="iconfont icon-alignRight"></text>
+    </view>
+    <view class="operate-box" data-list="ordered" bind:tap="_addList">
+      <text class="iconfont icon-orderedList"></text>
+    </view>
+    <view class="operate-box" data-list="bullet" bind:tap="_addList">
+      <text class="iconfont icon-unorderedList"></text>
+    </view>
+    <view class="operate-box" bind:tap="_undo">
+      <text class="iconfont icon-undo"></text>
+    </view>
+  </view>
+  <view class="editor-box-content">
+    <editor id="editor" name="{{name}}" placeholder="{{placeholder}}" bind:ready="_onEditorReady"
+      bind:input="_onInputting" show-img-resize="{{true}}"></editor>
+  </view>
+</view>

@@ -1,0 +1,62 @@
+/* pages/myLike/myLike.wxss */
+/* .myPost{
+    background-color: #fff;
+    height: 300rpx;
+} */
+.tab-bar{
+    position:fixed;
+    top:0; 
+    width: 100%;
+    z-index: 9;
+    text-align: center;
+    background-color: #fff;
+    color: rgba(55, 149, 165, 0.801);
+    height: 70rpx;
+    line-height: 70rpx;
+    font-weight: 200;
+    font-family: "LeGao";
+    font-size: 50rpx;
+    border-bottom: 1px solid #dddd;
+}
+.myLike{
+    background-color: #fff;
+    padding-bottom: 60rpx;
+    margin-bottom: 2px;
+    /* margin-top: 70rpx; */
+}
+.avatar{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-top: 40rpx;
+    margin-left: 40rpx;
+}
+.nickname{
+    margin-top: 60rpx;
+    margin-left: 30rpx;
+    color: #757575;
+}
+.content{
+    height: 130rpx;
+    /* background-color: red; */
+    margin-left: 130rpx;
+    margin-right: 30rpx;
+    overflow: hidden;
+    color: #757575;
+}
+.time{
+    margin-left: 130rpx;
+    font-size: 25rpx;
+    color: #757575;
+}
+.buttonCenter{
+    display: flex;
+    justify-content:center;
+    margin-top: 10rpx;
+}
+/* 点赞图标样式 */
+.likeIcon{
+    position: absolute;
+    right: 30rpx;
+    margin-bottom: 30rpx;
+}

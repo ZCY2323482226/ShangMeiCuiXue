@@ -1,0 +1,18 @@
+{
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "van-search": "@vant/weapp/search/index",
+        "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+        "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-sticky": "@vant/weapp/sticky/index",
+        "van-divider": "@vant/weapp/divider/index",
+        "van-skeleton": "@vant/weapp/skeleton/index",
+        "van-tag": "@vant/weapp/tag/index",
+        "van-tab": "@vant/weapp/tab/index",
+        "van-loading": "@vant/weapp/loading/index",
+        "van-tabs": "@vant/weapp/tabs/index"
+    }
+}

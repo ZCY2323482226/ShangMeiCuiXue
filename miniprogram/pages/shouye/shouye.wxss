@@ -1,0 +1,175 @@
+/* pages/shouye/shouye.wxss */
+.container{
+    height: 100%;
+    /* font-family: 'LeGao';
+    font-size:32rpx;   */
+}
+/* 搜索框 */
+/* .search-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rpx 20rpx;
+    box-sizing: border-box;
+    background-color: #ddd;
+  }
+  .search-left{
+    background-color: #eee;
+    flex: 2;
+  }
+  .search-left image{
+    width: 48rpx;
+    height: 48rpx;
+    padding: 10rpx 20rpx 10rpx 10rpx;
+    vertical-align: middle;
+    
+  }
+  .search-left input{
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 88rpx);
+  }
+  .search-right{
+    padding-left: 20rpx;
+  }
+  .search-right van-button{
+    width: 80rpx;
+    height: 80rpx;
+    vertical-align: middle;
+  } */
+  /* 顶部背景 */
+  /* 轮播图 */
+.swiper_container{
+    height: 400rpx;
+    background-color: #7848b6;
+    width: 100%;
+}
+.swiper{
+    width: 700rpx;
+    height: 450rpx;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: auto;
+}
+.swiper image{
+    width: 96%;
+    border: 4px solid #fff;
+    height: 100%;
+    border-radius: 8px;
+}
+/* 导航栏 */
+.nav-bar{
+    display: flex;
+    position: relative;
+    top: 100rpx;
+    width:700rpx;
+    height: 300rpx;
+    border-radius: 10px;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    /* background-color: #7848b6; */
+}
+.navbar-item{
+    /* flex: 1; */
+    width: 340rpx;
+    height: 200rpx;
+    background-color: #c1ebe7;
+    border: 5px solid #fff;
+    border-radius: 15px;
+    padding-left: 30rpx;
+    padding-top: 60rpx;
+}
+.navbar-item:first-child{
+    background-color: #f8d5b6;
+}
+.navbar-item image{
+    width: 80rpx;
+    height: 80rpx;
+}
+.navbar-item .title{
+    font-family: 'LeGao';
+    font-size: 50rpx;
+    font-weight: bold;
+}
+.navbar-item .detail{
+    width: 190rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    border: 1px solid #858585;
+    margin-top: 30rpx;
+    font-size: 20rpx;
+}
+
+/* logo */
+.logo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 200rpx;
+    width: 400rpx;
+    height: 140rpx;
+    /* background-color: red; */
+}
+.logo image{
+    width: 140rpx;
+    height: 140rpx;
+}
+.logo .name{
+    margin-bottom: 20rpx;
+    /* font-family: "Lucida Calligraphy", cursive, serif, sans-serif; */
+    font-family: 'LeGao';
+    font-size:70rpx;
+    font-weight: bold;
+    color: #7848b6;
+}
+/* 公告栏
+.notice-wrap{
+    position: relative;
+    top: 250px;
+    background:#FF3766;
+    padding:10rpx 70rpx 10rpx 0;
+    height:50rpx;
+    border-radius: 30px;
+    width: 95%;
+} */
+/* .ovh{
+    overflow:hidden
+}
+.font28{
+    font-size:28rpx
+}
+.relative{
+    position:relative
+}
+
+.notice{
+    color:#fff;
+    width:100%;
+    height:40rpx;
+    align-items: center;
+}
+.marquee_text {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+}
+.close-icon{
+    position:absolute;
+    right:25rpx;
+    top: 11px;
+}
+.icon40{
+    width:40rpx;
+    height:40rpx;
+}   
+.right{
+    float:right
+}
+.icon{
+    display:inline-block;
+    width:32rpx;
+    height:32rpx;
+    background-size:contain;
+} */

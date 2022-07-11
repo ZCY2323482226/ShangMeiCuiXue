@@ -1,0 +1,113 @@
+<!--pages/myPosts/myPosts.wxml-->
+<wxs src="../../util/filter.wxs" module="filter" />
+<!-- <view class="tab-bar" >
+        <text>我的微贴</text>
+</view> -->
+<view wx:if="{{loading}}">
+    <van-tabs animated active="{{ active }}" bind:change="onChange">
+        <van-tab title="校园学习圈">
+    <view wx:if="{{loading}}" >
+        <van-notify id="van-notify" />
+        <van-dialog id="van-dialog"/>
+        <view class="myPost" wx:for="{{mypostData}}">
+            <view>
+                <view class="userinfo" style="display: flex;">
+                    <image class="avatar" src="{{item.author.avatarUrl}}"></image>
+                    <text class="nickname">{{item.author.nickname}}</text>
+                    <view class="more1" bindtap="more1" data-articleinfo1="{{item}}">...</view>
+                    <van-popup
+                    show="{{ showPopup }}"
+                    position="bottom"
+                    custom-style="height: 300rpx;padding-top:10rpx"
+                    bind:close="onClose"
+                    >
+                    <view>
+                        <view class="buttonCenter">
+                            <van-button type="info" color="#7848b6" custom-style="width:400rpx" bindtap="remove1">删除</van-button>
+                        </view>
+                        
+                        <view class="buttonCenter">
+                        <!-- 提示：此处修改用data-word=""来传参 -->
+                            <van-button type="info" color="#7848b6" custom-style="width:400rpx" bindtap="fixArticle1">修改</van-button>
+                        </view>
+                        <view class="buttonCenter">
+                            <van-button type="info" color="#7848b6" custom-style="width:400rpx" bindtap="cancel1">取消</van-button>
+                        </view>
+                    </view>
+                    </van-popup>
+                </view>
+                <view class="content" bindtap="godetail" data-articleitem="{{item}}">
+                    <view style="width: 400rpx;overflow: hidden;">
+                        <van-tag wx:if="{{item.article.tag === '杂谈趣事'}}" type="primary">{{item.article.tag}}</van-tag>
+                        <van-tag wx:if="{{item.article.tag === '帮帮'}}" type="success">{{item.article.tag}}</van-tag>
+                        <van-tag wx:if="{{item.article.tag === '失物招领'}}" color="success">{{item.article.tag}}</van-tag>
+                        <van-tag wx:if="{{item.article.tag === '寻人'}}" color="pink">{{item.article.tag}}</van-tag>
+                        <view style="font-weight: bold;color: #313030;font-size: 32rpx;">{{item.article.title}}</view>
+                        {{item.article.content_text}}
+                    </view>
+                </view>
+                <view class="time-views">
+                    <view class="time">
+                        {{filter.formatTime(item.article.time,'Y-M-D h:m')}}
+                    </view>
+                    <view class="views">
+                        {{item.article.views}}浏览
+                    </view>
+                </view>
+            </view>
+    </view>
+    <van-divider contentPosition="center">已经到底啦！</van-divider>
+    </view>
+        </van-tab>
+        <van-tab title="校园表白墙">
+            <view wx:if="{{loading}}" >
+        <van-notify id="van-notify" />
+        <van-dialog id="van-dialog"/>
+        <view class="myPost" wx:for="{{lovewallData}}">
+            <view>
+                <view class="userinfo" style="display: flex;">
+                    <image class="avatar" src="{{item.author.avatarUrl}}"></image>
+                    <text class="nickname">{{item.author.nickname}}</text>
+                    <view class="more2" bindtap="more2" data-articleinfo2="{{item}}">...</view>
+                    <van-popup
+                    show="{{ showPopup }}"
+                    position="bottom"
+                    custom-style="height: 300rpx;padding-top:10rpx"
+                    bind:close="onClose"
+                    >
+                    <view>
+                        <view class="buttonCenter">
+                            <van-button type="info" color="#7848b6" custom-style="width:400rpx" bindtap="remove2">删除</van-button>
+                        </view>
+                        
+                        <view class="buttonCenter">
+                        <!-- 提示：此处修改用data-word=""来传参 -->
+                            <van-button type="info" color="#7848b6" custom-style="width:400rpx" bindtap="fixArticle2">修改</van-button>
+                        </view>
+                        <view class="buttonCenter">
+                            <van-button type="info" color="#7848b6" custom-style="width:400rpx" bindtap="cancel2">取消</van-button>
+                        </view>
+                    </view>
+                    </van-popup>
+                </view>
+                <view class="content" bindtap="golovewalldetail" data-articleitem="{{item}}">
+                    <view style="width: 400rpx;overflow: hidden;">
+                        <view style="font-weight: bold;color: #313030;font-size: 32rpx;">{{item.lovewall.title}}</view>
+                        {{item.lovewall.content}}
+                    </view>
+                </view>
+                <view class="time-views">
+                    <view class="time">
+                        {{filter.formatTime(item.lovewall.time,'Y-M-D h:m')}}
+                    </view>
+                    <view class="views">
+                        {{item.lovewall.views}}浏览
+                    </view>
+                </view>
+            </view>
+    </view>
+    <van-divider contentPosition="center">已经到底啦！</van-divider>
+    </view>
+        </van-tab>
+    </van-tabs>
+</view>

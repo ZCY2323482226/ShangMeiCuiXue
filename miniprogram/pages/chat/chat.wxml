@@ -1,0 +1,40 @@
+<!--pages/chat/chat.wxml-->
+<wxs src="../../util/filter.wxs" module="filter" />
+<view class="chat">
+    <view class="back" bindtap="back" style="top:{{statsuBarHeight}}px">返回</view>
+    <view class="header" style="top:{{statsuBarHeight}}px">
+        {{Tainfo.nickname}}
+    </view>
+    <scroll-view class="message-list" id="page" style="top:{{statsuBarHeight+headHeight}}px;height:{{chatListHeight}}px"
+        scroll-y="true" scroll-top="{{scrollTop}}" bindtap="hideKeyboard">
+        <view class="scrollMsg">
+            <block wx:for="{{message_data.allmessage}}" wx:key="index" wx:for-index="index" >
+            <!-- ta的消息 -->
+            <view class="hemessage" id="msg-{{index}}" wx:if="{{item.recipientOpenid === openid}}">        
+                <view class="heavatar">
+                    <image src="{{Tainfo.avatarUrl}}"></image>
+                </view>
+                <view class="hemessagecontent">{{item.content}}
+                    <view class="time">{{filter.formatTime(item.time,'h:m')}}</view>
+                </view>
+            </view>
+            <!-- 我的消息 -->
+            <view class="mymessage" wx:if="{{item.sendOpenid === openid}}">
+                <view class="myavatar">
+                    <image src="{{Myinfo.avatarUrl}}"></image>             
+                </view>
+                <view class="mymessagecontent">{{item.content}}
+                    <view class="time">{{filter.formatTime(item.time,'h:m')}}</view>
+                </view>
+            </view>
+            </block>
+        </view>
+        
+    </scroll-view>
+    <!-- 输入框 -->
+    <view class="input-panel" style="bottom:{{keyboardHeight}}px">
+    <input adjust-position="{{false}}" hold-keyboard="{{true}}" bindinput="getInput" value="{{curMessage}}"/>
+    <view class="send-btn" bindtap="send">发送</view>
+    </view>
+</view>
+

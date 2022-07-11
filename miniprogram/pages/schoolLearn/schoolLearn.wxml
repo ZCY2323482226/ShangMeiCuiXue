@@ -1,0 +1,71 @@
+<wxs src="../../util/filter.wxs" module="filter" />
+<view wx:if="{{loading}}">
+    <view class="navbar" >
+        <text class="back" bindtap="back">首页</text>
+        <text class="tab-bar">最新动态</text>
+    </view>
+    <view class="Allcontent">
+    <van-sticky offset-top="{{ 0 }}">
+        <view class="search">
+            <van-search value="{{ searchContent }}" placeholder="输入文章标题搜索" show-action bind:search="onSearch" bind:cancel="onCancel" shape="round" />
+        </view>
+    </van-sticky>
+    <view class="allitem">
+        <view class="item" wx:for="{{article_author_list}}">
+            <view class="item_content">
+                <view class="avatar" bindtap="checkpushlisherinfo" data-pushlisherinfo="{{item.author}}">
+                    <image src="{{item.author.avatarUrl}}"></image>
+                </view>
+                <view class="minitem">
+                    <view class="nickname">
+                        {{item.author.nickname}}
+                    </view>
+                    <view class="content" bindtap="detail_route" data-articleItem="{{item}}">
+                        <view style="width: 400rpx;overflow: hidden;">
+                            <van-tag wx:if="{{item.article.tag === '杂谈趣事'}}" type="primary">{{item.article.tag}}</van-tag>
+                            <van-tag wx:if="{{item.article.tag === '帮帮'}}" type="success">{{item.article.tag}}</van-tag>
+                            <van-tag wx:if="{{item.article.tag === '失物招领'}}" color="success">{{item.article.tag}}</van-tag>
+                            <van-tag wx:if="{{item.article.tag === '寻人'}}" color="pink">{{item.article.tag}}</van-tag>
+                            <view style="font-weight: bold;color: #313030;font-size: 32rpx;">{{item.article.title}}</view>
+                            {{item.article.content_text}}
+                        </view>
+                    </view>
+                    <view class="time">
+                        {{filter.formatTime(item.article.time,'Y-M-D h:m')}}
+                    </view>
+                </view>
+                <view class="operate">
+                    <!-- 评论功能 -->
+                    <van-icon custom-class="operateicon" name="comment-o" size="50rpx" color="#686868" bindtap="comment" data-articleitem="{{item}}" />
+                    <!-- 点赞功能 -->
+                    <van-icon wx:if="{{!item.article.likeorNot}}" custom-class="operateicon" name="good-job-o" size="50rpx" color="#686868" bindtap="likebind" data-articleIndex="{{index}}" data-articleId="{{item.article._id}}" />
+                    <van-icon wx:if="{{item.article.likeorNot}}" custom-class="operateicon" name="good-job" size="50rpx" color="red" bindtap="likebind" data-articleIndex="{{index}}" data-articleId="{{item.article._id}}" />
+                    <text class="likecount">{{item.likelist.length}}</text>
+                </view>
+            </view>
+            <view class="commentlist">
+                <view class="comment" wx:for="{{item.commentList}}">
+                    <text class="comment_nickname">{{item.comment_authorName}}</text>
+                    :
+                    <text class="comment_content">{{item.content}}</text>
+                </view>
+            </view>
+            <view class="countComment" wx:if="{{item.commentList.length>3}}" bindtap="detail_route" data-articleItem="{{item}}">
+                    查看所有{{item.commentList.length}}条评论
+            </view>
+        </view>
+    </view>
+    </view>
+    <!-- <van-divider wx:if="{{!isnotAllarticle}}" contentPosition="center">努力加载中...</van-divider> -->
+    <view class="loading" wx:if="{{!isnotAllarticle}}">
+        <van-loading size="24px">加载中...</van-loading>
+    </view>
+    <van-divider wx:if="{{isnotAllarticle}}" contentPosition="center">文章已经到底啦！</van-divider>
+    <!-- 发布学习帖的按钮 -->
+    <movable-area class='post-container' >
+        <movable-view direction="all" class='post' bindtap="publish">
+            <image src='cloud://nsedu-0geuprrl4b1a75d6.6e73-nsedu-0geuprrl4b1a75d6-1311608272/image/suggestion1.png' data-page='/pages/home/post/post' bindtap='post'></image>
+        </movable-view>
+    </movable-area>
+
+</view>
